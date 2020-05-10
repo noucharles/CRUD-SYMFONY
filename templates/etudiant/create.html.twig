@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formEtudiant 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+
+    {% if editMode %}
+    <h1 my-4>Enregistrement des modifications</h1>
+    {% else %}
+    <h1 my-4>Enregistrement d'un nouveau étudiant</h1>
+    {% endif %}
+
+    {{ form_start(formEtudiant) }}
+
+    {{ form_widget(formEtudiant) }}
+
+    {{ form_end(formEtudiant) }}
+
+{% endblock %}

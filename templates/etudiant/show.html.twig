@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <article class="my-4">
+        <h4>Nom de l'etudiant: {{ etudiant.lastName }}</h4>
+        <h5 class="card">Prénom de l'etudiant: {{ etudiant.firstName }}</h5>
+        <h5 class="card">Matricule: {{ etudiant.matricule }}</h5>
+        <h5 class="card">Age: {{ etudiant.age }} ans</h5>
+        <h5 class="card">Sexe: {{ etudiant.sexe }}</h5>
+        <h5 class="card">Niveau de l'etudiant: {{ etudiant.classe }}éme année</h5>
+
+        <button type="submit"><a href="{{ path('etudiant_edit',{'id': etudiant.id}) }}">modifier</a> </button>
+        <button type="submit"><a href="{{ path('etudiant_delete',{'id': etudiant.id}) }}">supprimer</a> </button>
+    </article>
+{% endblock %}

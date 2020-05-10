@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EtudiantController!{% endblock %}
+
+{% block body %}
+    <section class="articles row">
+        {% for etudiant in etudiants %}
+            <article class="offset-1 my-4">
+                <h2>{{ etudiant.lastName }}</h2>
+                <p>{{ etudiant.firstName }}</p>
+                <p>{{ etudiant.matricule }}</p>
+                <a href="{{ path('etudiant_show',{'id': etudiant.id}) }}" class="btn btn-primary">Plus d'infos</a>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}
